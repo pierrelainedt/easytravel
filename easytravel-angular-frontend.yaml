@@ -4,6 +4,7 @@ metadata:
   labels:
     easytravel-tier: easytravel-frontend
     easytravel-type: angular
+    app.kubernetes.io/version: v2.0
   name: easytravel-angular-frontend
   namespace: easytravel
 spec:
