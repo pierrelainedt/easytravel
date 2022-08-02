@@ -17,5 +17,5 @@ spec:
   selector:
     easytravel-tier: easytravel-frontend
     easytravel-type: angular
-  sessionAffinity: No
+  sessionAffinity: None
   type: LoadBalancer
