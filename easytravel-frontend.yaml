@@ -4,6 +4,7 @@ metadata:
   labels:
     easytravel-tier: easytravel-frontend
     easytravel-type: classic
+    app.kubernetes.io/version: v1.9.7
   name: easytravel-frontend
   namespace: easytravel
 spec:
