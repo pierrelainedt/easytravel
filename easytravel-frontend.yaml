@@ -4,7 +4,7 @@ metadata:
   labels:
     easytravel-tier: easytravel-frontend
     easytravel-type: classic
-    app.kubernetes.io/version: v1.9.7
+    app.kubernetes.io/version: 1.9.7
   name: easytravel-frontend
   namespace: easytravel
 spec:
@@ -29,6 +29,8 @@ spec:
       - env:
         - name: ET_BACKEND_URL
           value: http://easytravel-backend-service:8080
+        - name: DT_RELEASE_VERSION
+          value: 1.9.7
         image: dynatrace/easytravel-frontend
         imagePullPolicy: Always
         name: easytravel-frontend
