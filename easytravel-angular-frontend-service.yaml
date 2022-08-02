@@ -16,5 +16,6 @@ spec:
     targetPort: 8080
   selector:
     easytravel-tier: easytravel-frontend
+    easytravel-type: angular
   sessionAffinity: None
   type: NodePort
