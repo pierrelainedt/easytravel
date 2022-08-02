@@ -23,14 +23,11 @@ spec:
         easytravel-tier: easytravel-frontend
         easytravel-type: classic
         tier: frontend
-        app.kubernetes.io/version: "1.9.7"
     spec:
       containers:
       - env:
         - name: ET_BACKEND_URL
           value: http://easytravel-backend-service:8080
-        - name: DT_RELEASE_VERSION
-          value: "1.9.7"
         image: dynatrace/easytravel-frontend
         imagePullPolicy: Always
         name: easytravel-frontend
