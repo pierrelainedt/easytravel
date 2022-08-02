@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   labels:
     easytravel-tier: easytravel-backend
+    app.kubernetes.io/version: v5.24
   name: easytravel-backend
   namespace: easytravel
 spec:
