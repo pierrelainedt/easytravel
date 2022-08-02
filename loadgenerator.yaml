@@ -4,7 +4,7 @@ metadata:
   labels:
     app: loadgenerator
   name: loadgenerator
-  namespace: easytravel-prod
+  namespace: easytravel
 spec:
   replicas: 1
   selector:
@@ -23,10 +23,8 @@ spec:
       containers:
       - env:
         - name: ET_FRONTEND_URL
-          value: http://easytravel-prod-nginx-service:80
-        - name: ET_BACKEND_URL
-          value: http://easytravel-backend-service:8080
+          value: http://easytravel-frontend-service:8080
         - name: ET_PROBLEMS
-          value: DatabaseCleanup
+          value: BadCacheSynchronization,CPULoad,DatabaseCleanup,DatabaseSlowdown,FetchSizeTooSmall,JourneySearchError404,JourneySearchError500,LoginProblems,MobileErrors,TravellersOptionBox
         image: dynatrace/easytravel-loadgen:latest
         name: easytravel-loadgen
