@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   labels:
     easytravel-tier: easytravel-backend
-    app.kubernetes.io/version: 5.24
   name: easytravel-backend
   namespace: easytravel
 spec:
@@ -27,8 +26,6 @@ spec:
       - env:
         - name: ET_DATABASE_LOCATION
           value: easytravel-mongodb-service:27017
-        - name: DT_RELEASE_VERSION
-          value: 5.24
         image: dynatrace/easytravel-backend
         imagePullPolicy: Always
         name: easytravel-backend
