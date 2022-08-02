@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   labels:
     easytravel-tier: easytravel-mongodb
-    app.kubernetes.io/version: 1.53
   name: easytravel-mongodb
   namespace: easytravel
 spec:
