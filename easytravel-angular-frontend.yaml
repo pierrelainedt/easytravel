@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    easytravel-tier: easytravel-frontend
+    easytravel-type: angular
+  name: easytravel-angular-frontend
+  namespace: easytravel
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      easytravel-tier: easytravel-frontend
+      easytravel-type: angular
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        easytravel-tier: easytravel-frontend
+        easytravel-type: angular
+        tier: frontend
+    spec:
+      containers:
+      - env:
+        - name: ET_BACKEND_URL
+          value: http://easytravel-backend-service:8080
+        image: dynatrace/easytravel-angular-frontend
+        imagePullPolicy: Always
+        name: easytravel-angular-frontend
+        ports:
+        - containerPort: 8080
+          protocol: TCP
